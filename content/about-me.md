@@ -9,7 +9,7 @@ tags:
   - developer
 ---
 
-*AS OF : 6th of June, 2026*
+**AS OF : 6th of June, 2026**
 
 I'm anxious about creating this page because in real life, I am known to be intensely private. 
 But I have come to realize that this has held me back in various ways:
@@ -26,6 +26,7 @@ I wrote that, and found it surprisingly limiting.
 I suppose I could zoom out a little and talk about the things that I do - according to Batman's ex-girlfriend, that is what defines me. 
 
 Okay - I am passionate about:
+
 - Video games.
 - Speed chess (No disrespect meant to the classical time format, but there are better ways to wait for paint to dry).
 - Personal finance.
