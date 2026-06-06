@@ -35,6 +35,7 @@ def get_posts():
             "slug": file.stem,
             "title": post.get("title", file.stem),
             "date": post.get("date", "")
+            "updated": post.get("updated","")
         })
 
     posts.sort(

@@ -18,4 +18,4 @@ Next plans:
 - An HTML5 browser game.
 - A CRUD app with Authz/Authn + Sessions.
 - A "buy me a coffee" page.
-- A FFMPEG-driven video streaming page for live streams. 
+- A FFMPEG-driven video streaming page. 
