@@ -34,7 +34,7 @@ def get_posts():
         posts.append({
             "slug": file.stem,
             "title": post.get("title", file.stem),
-            "date": post.get("date", "")
+            "date": post.get("date", ""),
             "updated": post.get("updated","")
         })
 
