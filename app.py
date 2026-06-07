@@ -93,7 +93,7 @@ def rss_feed():
 @app.route("/<slug>")
 def blog_post(slug):
 
-    path = CONTENT_DIR / f"{slug}.md"
+    path = BLOG_DIR / f"{slug}.md"
 
     if not path.exists():
         abort(404)
