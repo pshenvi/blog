@@ -84,7 +84,7 @@ def rss_feed():
         if post['date']:
             fe.pubDate(post['date'])
 
-         if post['tags']:
+        if post['tags']:
             fe.category([{'term': tag} for tag in post['tags']])
 
     return Response(fg.rss_str(pretty=True), mimetype='application/rss+xml')
