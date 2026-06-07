@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Pradyumna Shenvi's Blog</title>
-    <link rel="stylesheet" href="static/styles.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
 </head>
 
 <body>
 
     <div class="sitemap">
 
-        <h3>Click to View</h1>
+        <h3>Click to View</h3>
 
         <ul>
             {% for post in posts %}
