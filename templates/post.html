@@ -2,25 +2,33 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 
 <body>
 
     <div class="article-container">
 
-        <a href="/">Home</a>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
 
-        <h1>{{ title }}</h1>
+        <div class="article-metadata">
+            <h1>{{ title }}</h1>
 
-        <p>Created: {{ date }}</p>
+            <p>Created: {{ date }}</p>
 
-        <p>Updated: {{ updated }}</p>
+            <p>Updated: {{ updated }}</p>
 
-        <p>Description: {{ description }} </p>
+            <p>Description: {{ description }} </p>
+        </div>
 
-        {{ content | safe }}
+        <div class="article_content">
+            {{ content | safe }}
+        </div>
 
     </div>
 
