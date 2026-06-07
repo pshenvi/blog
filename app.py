@@ -107,8 +107,8 @@ def blog_post(slug):
         "post.html",
         title=post.get("title", slug),
         date=post.get("date", ""),
-        updated=post.get("updated","")
-        description=post.get("description","")
+        updated=post.get("updated",""),
+        description=post.get("description",""),
         content=html
     )
 
