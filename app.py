@@ -1,6 +1,7 @@
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, Response
 from werkzeug.middleware.proxy_fix import ProxyFix
 from pathlib import Path
+from feedgen.feed import FeedGenerator
 
 import markdown
 import frontmatter
@@ -14,7 +15,7 @@ app.wsgi_app = ProxyFix(
     x_host=1
 )
 
-CONTENT_DIR = Path("content")
+BLOG_DIR = Path("blog")
 
 md = markdown.Markdown(
     extensions=[
@@ -27,15 +28,24 @@ def get_posts():
 
     posts = []
 
-    for file in CONTENT_DIR.glob("*.md"):
+    for file in BLOG_DIR.glob("*.md"):
 
         post = frontmatter.load(file)
+
+        slug = file.name[:-3] 
+
+        post_tags = post.get('tags', [])
+        if isinstance(post_tags, str):
+            post_tags = [t.strip() for t in post_tags.split(',')]
 
         posts.append({
             "slug": file.stem,
             "title": post.get("title", file.stem),
             "date": post.get("date", ""),
-            "updated": post.get("updated","")
+            "updated": post.get("updated",""),
+            "description": post.get("description", ""),
+            "url": f'https://blog.ammayti.com/{slug}',
+            "tags": post_tags
         })
 
     posts.sort(
@@ -56,6 +66,29 @@ def index():
         posts=posts
     )
 
+@app.route('/feed')
+@app.route('/rss')
+def rss_feed():
+    fg = FeedGenerator()
+    fg.title('Pradyumna Shenvi\'s Blog')
+    fg.link(href='https://blog.ammayti.com', rel='alternate')
+    fg.description('Tech, Fiction and Musings.')
+
+    posts = get_posts()
+
+    for post in posts:
+        fe = fg.add_entry()
+        fe.title(post['title'])
+        fe.link(href=post['url'])
+        fe.description(post['description'])
+        if post['date']:
+            fe.pubDate(post['date'])
+
+         if post['tags']:
+            fe.category([{'term': tag} for tag in post['tags']])
+
+    return Response(fg.rss_str(pretty=True), mimetype='application/rss+xml')
+
 
 @app.route("/<slug>")
 def blog_post(slug):
@@ -74,6 +107,8 @@ def blog_post(slug):
         "post.html",
         title=post.get("title", slug),
         date=post.get("date", ""),
+        updated=post.get("updated","")
+        description=post.get("description","")
         content=html
     )
 

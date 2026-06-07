@@ -1,12 +1,9 @@
 ---
 title: About Me
 date: 2026-06-04
-tags:
-  - selfimprovement
-  - blogger
-  - writer
-  - profile
-  - developer
+updated: 2026-06-07
+description: Pradyumna Shenvi, the human.
+tags: [selfimprovement, blogger, writer, profile, developer, gamer, chess]
 ---
 
 **AS OF : 6th of June, 2026**
