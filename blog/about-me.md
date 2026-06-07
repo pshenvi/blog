@@ -1,14 +1,14 @@
 ---
 title: About Me
 date: 2026-06-04
-updated: 2026-06-07
+updated: 2026-06-04
 description: Pradyumna Shenvi, the human.
 tags: [selfimprovement, blogger, writer, profile, developer, gamer, chess]
 ---
 
-**AS OF : 6th of June, 2026**
+**6th of June, 2026**
 
-I'm anxious about creating this page because in real life, I am known to be intensely private. 
+I'm anxious about creating this page because in real life, I am private. 
 But I have come to realize that this has held me back in various ways:
 
 - I do not get to meet people that I can have an actual conversation with. I miss the days of "hello", "how's your mother doing", etc.

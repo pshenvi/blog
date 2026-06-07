@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Pradyumna Shenvi's Blog</title>
+    <link rel="stylesheet" href="styles.css"
 </head>
+
 <body>
 
-<h1>Click to View</h1>
+    <div class="sitemap">
 
-<ul>
-{% for post in posts %}
-<li>
-    <a href="/{{ post.slug }}">
-        {{ post.title }}
-    </a>
-</li>
-{% endfor %}
-</ul>
+        <h3>Click to View</h1>
+
+        <ul>
+            {% for post in posts %}
+            <li>
+                <a href="/{{ post.slug }}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+    </div>
 
 </body>
+
 </html>
